@@ -1,0 +1,55 @@
+****** HSPICE -- K-2015.06-SP1 linux64 (Aug 23 2015) ******
+ Input File: hspice_StarterCode_2019.sp
+ lic:
+ lic: FLEXlm: v11.2.1
+ lic: USER:   behmanj              HOSTNAME: flip3.engr.oregonstate.edu
+ lic: HOSTID: "14feb5d10927"       PID:      20531
+ lic: Using FLEXlm license file:
+ lic: 7188@linlic.engr.oregonstate.edu
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 12-jul-2021/2019.06
+ lic: 1(in_use)/50(total) FLOATING license(s) on SERVER 7188@linlic.engr.oregonstate.edu
+ lic:
+ init: begin read circuit files,  cpu clock=  1.50E-01
+       option search = /usr/local/apps/synopsys/hspice_K-2015.06.SP1/hs
+                         pice/parts/ad
+       option search = /usr/local/apps/synopsys/hspice_K-2015.06.SP1/hs
+                         pice/parts/ad
+       option search = /usr/local/apps/synopsys/hspice_K-2015.06.SP1/hs
+                         pice/parts/behave
+       option search = /usr/local/apps/synopsys/hspice_K-2015.06.SP1/hs
+                         pice/parts/bjt
+       option search = /usr/local/apps/synopsys/hspice_K-2015.06.SP1/hs
+                         pice/parts/burr_brn
+       option search = /usr/local/apps/synopsys/hspice_K-2015.06.SP1/hs
+                         pice/parts/comlinear
+       option search = /usr/local/apps/synopsys/hspice_K-2015.06.SP1/hs
+                         pice/parts/dio
+       option search = /usr/local/apps/synopsys/hspice_K-2015.06.SP1/hs
+                         pice/parts/fet
+       option search = /usr/local/apps/synopsys/hspice_K-2015.06.SP1/hs
+                         pice/parts/lin_tech
+       option search = /usr/local/apps/synopsys/hspice_K-2015.06.SP1/hs
+                         pice/parts/pci
+       option search = /usr/local/apps/synopsys/hspice_K-2015.06.SP1/hs
+                         pice/parts/signet
+       option search = /usr/local/apps/synopsys/hspice_K-2015.06.SP1/hs
+                         pice/parts/ti
+       option search = /usr/local/apps/synopsys/hspice_K-2015.06.SP1/hs
+                         pice/parts/tline
+       option search = /usr/local/apps/synopsys/hspice_K-2015.06.SP1/hs
+                         pice/parts/xilinx
+       option runlvl
+       option post
+ init: end read circuit files,  cpu clock=  1.50E-01 peak memory=       236 mb
+ init: begin check errors,  cpu clock=  1.50E-01
+ init: end check errors,  cpu clock=  1.60E-01 peak memory=       236 mb
+ init: begin setup matrix, pivot=     0 cpu clock=  1.60E-01
+       establish matrix -- done,  cpu clock=  1.60E-01 peak memory=       236 mb
+       re-order matrix -- done,  cpu clock=  1.60E-01 peak memory=       236 mb
+ init: end setup matrix,  cpu clock=  1.60E-01 peak memory=       236 mb
+ output: hspice_StarterCode_2019.sw0
+ sweep: dc dc0    begin, #sweeps= 301 cpu clock=  1.60E-01
+ sweep: dc dc0    end,  cpu clock=  1.80E-01 peak memory=       237 mb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

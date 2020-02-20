@@ -1,0 +1,55 @@
+#Diode Starter Code
+#THIS CODE IS NOT COMPLETE! YOU NEED TO FILL IN/TWEAK PARAMETERS TO
+#MAKE THIS EXECUTABLE.
+
+#All dimensions are in um
+
+go atlas
+
+mesh
+
+# Define mesh/structure size and dimensions of the Diode
+x.mesh loc=0.00 spac=.05
+x.mesh loc=1.5 spac=.05
+y.mesh loc=0.00 spac=0.20
+y.mesh loc=1.5 spac=0.001
+y.mesh loc=3 spac=0.20
+
+
+# Define p-type and n-type region boundaries
+region number=1 x.min=0.00 x.max=1.5 y.min=0.00 y.max=1.5 material=GaAs
+region number=2 x.min=0.00 x.max=1.5 y.min=1.5 y.max=3 material=GaAs
+
+#Define electrode locations
+electrode name=anode   top
+electrode name=cathode bottom
+
+#Define doping concentration of different regions
+doping uniform conc=1E16 p.type region=1
+doping uniform conc=5E17 n.type region=2
+
+#Define models & solve initial conditions
+model analytic fldmob srh fermidirac auger bgn
+contact name=anode   neutral 
+contact name=cathode neutral
+
+solve init
+
+#Simulate IV curve
+log outfile=diode_2019_part_a.log
+solve  vanode=-1.5 vstep=.1 vfinal=1.5 name=anode
+
+#Plot IV curve
+tonyplot diode_2019_part_a.log -set IV.set
+
+# Bias at -5V and save the structure file
+solve  vanode=-5
+output con.band val.band e.mob h.mob
+save outfile=diode_2019.str
+
+# Then plot in Tonyplot to create the appropriate cutline
+tonyplot diode_2019.str -set IV.set
+
+
+quit
+
